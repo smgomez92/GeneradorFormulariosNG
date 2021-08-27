@@ -1,0 +1,246 @@
+@import "wizard.css";
+
+/********************************************
+ * VENTANA Y TABLAS DE PROPIEDADES
+ ********************************************/
+.editor-property-table-wrap {
+    max-height: 700px;
+    overflow: auto;
+    display: inline-block;
+    background: #eef;
+}
+
+.editor-property-table {
+    border-collapse: collapse;
+}
+
+.editor-property-row td {
+    vertical-align: top;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #999;
+    padding: 3px;
+}
+
+.editor-property-row td label {
+    color: #333;
+}
+
+.editor-buttons {
+    display: table;
+}
+
+.editor-list {
+    border: 1px solid #999;
+    background: #fff;
+    border-radius: 5px;
+    max-height: 128px;
+    min-height: 16px;
+    overflow: auto;
+    margin-bottom: 3px;
+}
+
+.editor-list td {
+    border: 0;
+    padding: 0;
+}
+
+.editor-list td:first-child {
+    width: 100%;
+}
+
+/********************************************
+ * EDITOR EN LINEA
+ ********************************************/
+.editor-popup {
+    position: absolute;
+    border: 1px solid #666;
+    white-space: nowrap;
+    padding: 1px;
+    display: block;
+}
+
+.editor-group:hover {
+    outline: 1px solid #dcc;
+    background: #fee;
+}
+
+.editor-group-popup {
+    background: #dcc;
+}
+
+.editor-field:hover {
+    outline: 1px solid #00a;
+}
+
+.editor-field-popup {
+    background: #ccd;
+}
+
+.editor-widget:hover {
+    outline: 1px solid #0a0;
+}
+
+.editor-widget-popup {
+    background: #cdc;
+}
+
+/********************************************
+ * ARBOL DE PROPIEDADES
+ ********************************************/
+.editor-property-tree-wrap {
+    position: absolute;
+    left: 0;
+    top: 75px;
+    border: 1px solid #999;
+    background: #eee;
+}
+
+.editor-property-tree-wrap>label {
+    cursor: pointer;
+    font-weight: bold;
+    display: block;
+    padding: 2.5px 5px;
+    background: #cde;
+}
+
+.editor-property-tree-wrap>label .handle {
+    cursor: move;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.editor-property-tree-wrap>div {
+    padding: 5px;
+}
+
+.editor-property-tree-wrap li > label > div.inline {
+    visibility: hidden;
+}
+
+.editor-property-tree-wrap li:hover > label > div.inline {
+    visibility: visible;
+}
+
+.editor-property-tree-wrap>a {
+    font-size: xx-small;
+    margin-left: 10px;
+}
+
+.editor-property-tree-wrap>div>ul {
+    max-height: 400px;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.editor-property-tree-wrap ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.editor-property-tree-wrap li {
+    list-style: none;
+    list-style-position: inside;
+    padding-left: 0;
+    border-top: 1px solid #ddd;
+}
+
+.editor-property-tree-wrap li.subitems {
+    cursor: pointer;
+    list-style-image: url(../img/arbol-mas.gif);
+    white-space: nowrap;
+}
+
+.editor-property-tree-wrap li.subitems>ul {
+    display: none;
+}
+
+.editor-property-tree-wrap li.subitems.show {
+    list-style-image: url(../img/arbol-menos.gif);
+}
+
+.editor-property-tree-wrap li.subitems.show>ul {
+    display: block;
+}
+
+.editor-property-tree-wrap li.subitems>ul>li>label {
+    cursor: move;
+}
+
+/********************************************
+ * ICONOS
+ ********************************************/
+div.inline {
+    display: inline-table;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+div.disabled {
+    cursor: default;
+}
+
+.editor-add {
+    background: url(../img/add.png) no-repeat;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+.editor-edit {
+    background: url(../img/edit.png) no-repeat;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+.editor-delete {
+    background: url(../img/delete.png) no-repeat;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+.editor-up {
+    background: url(../img/up.png) no-repeat;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+.editor-down {
+    background: url(../img/down.png) no-repeat;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+/********************************************
+ * AUTOCOMPLETE
+ ********************************************/
+div.autocomplete {
+    margin: 0px;
+    padding: 0px;
+    background: #fff;
+    border: 1px solid #888;
+    position: absolute;
+}
+
+div.autocomplete ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+div.autocomplete ul li.selected {
+    background-color: #cde;
+}
+
+div.autocomplete ul li {
+    margin: 0;
+    padding: 2px;
+    display: block;
+    list-style-type: none;
+    cursor: pointer;
+}

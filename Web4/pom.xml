@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.fitbank</groupId>
+    <artifactId>web</artifactId>
+    <version>4</version>
+  </parent>
+  <groupId>com.fitbank.web</groupId>
+  <artifactId>web4</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>FitBank Web - Web 4</name>
+  <modules>
+    <module>backend-base</module>
+    <module>backend-uci</module>
+    <module>bean-properties</module>
+    <module>frontend</module>
+    <module>tools</module>
+    <module>webpages</module>
+    <module>webpages-definitions</module>
+    <module>webpages-utils</module>
+	<module>serializacion</module>
+  </modules>
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+      <resource>
+        <directory>src/main/js</directory>
+      </resource>
+    </resources>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

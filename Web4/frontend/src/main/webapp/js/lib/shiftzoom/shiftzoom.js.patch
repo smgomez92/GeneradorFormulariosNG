@@ -1,0 +1,23 @@
+--- shiftzoom.js.orig	2011-04-05 13:58:00.000000000 -0300
++++ shiftzoom.js	2011-04-05 14:00:29.000000000 -0300
+@@ -84,8 +84,8 @@
+ 			if(document.images&&document.createElement&&document.getElementById&&document.getElementsByTagName) {
+ 				var st,over,view,div=ele.parentNode,img=shiftzoom.E('div'),xref=shiftzoom.E('img'),outer=shiftzoom.E('div'); img.xid=(ele.id!=""?ele.id:ele.id=uniqueID()); 
+ 				div.appendChild(outer); outer.id=img.xid+'_wrap'; outer.appendChild(xref); outer.appendChild(img); img.wrapid=outer.id; img.opts=defopts; img.highres=ele.src;
+-				if(ele.naturalWidth && ele.naturalHeight) {img.xfactor=roundTo(ele.naturalWidth/ele.width,4); img.yfactor=roundTo(ele.naturalHeight/ele.height,4); img.maxwidth=ele.naturalWidth; img.maxheight=ele.naturalHeight;}
+-				else {var tmp=new Image; tmp.src=ele.src; img.xfactor=roundTo(tmp.width/ele.width,4); img.yfactor=roundTo(tmp.height/ele.height,4); img.maxwidth=tmp.width; img.maxheight=tmp.height; tmp=null; delete tmp;}
++				if(ele.naturalWidth && ele.naturalHeight) {img.xfactor=roundTo(ele.naturalWidth/ele.width,4); img.yfactor=roundTo(ele.naturalHeight/ele.height,4); img.maxwidth=ele.naturalWidth*2; img.maxheight=ele.naturalHeight*2;}
++				else {var tmp=new Image; tmp.src=ele.src; img.xfactor=roundTo(tmp.width/ele.width,4); img.yfactor=roundTo(tmp.height/ele.height,4); img.maxwidth=tmp.width*2; img.maxheight=tmp.height*2; tmp=null; delete tmp;}
+ 				if(ele.width>=100&&ele.width<img.maxwidth&&ele.height>=100&&ele.height<img.maxheight){
+ 					img.fading=(typeof opts['fading']==='boolean'?opts['fading']:shiftzoom.defaultFading);
+ 					img.buttons=(typeof opts['buttons']==='boolean'?opts['buttons']:shiftzoom.defaultButtons);
+@@ -743,4 +743,7 @@
+ 		return false;
+ 	},
+ 	_stopMove : function() {document.onmousemove=null; document.onmouseup=null; shiftzoom.G(cvi_szimage).onmousedown=shiftzoom._catchKey; cvi_szimage=null; return false;}
+-}
+\ No hay ningún carácter de nueva línea al final del fichero
++}
++
++shiftzoom.defaultCurpath="js/lib/shiftzoom/shiftzoom/images/cursors/";
++

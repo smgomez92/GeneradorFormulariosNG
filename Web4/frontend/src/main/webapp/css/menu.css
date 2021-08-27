@@ -1,0 +1,184 @@
+@CHARSET "UTF-8";
+
+.menu-rapido {
+    width: 700px;
+}
+
+.menu-rapido input {
+    width: 300px;
+    margin-bottom: 5px;
+    border: 2px solid #666666;
+}
+
+.menu-rapido input:focus {
+    border: 2px solid #006699;
+}
+
+div.menu {
+    border: 1px solid #666;
+    background: #ddd;
+    width: 200px;
+    height: 350px;
+    overflow: auto;
+    float: left;
+    margin-right: 10px;
+    padding: 2px 5px;
+}
+
+div.resultados {
+    border: 1px solid #666;
+    background: white;
+    height: 350px;
+    overflow: auto;
+}
+
+div.resultados>div {
+    cursor: pointer;
+}
+
+div.resultados>div.seleccionado {
+    background: #cdf;
+}
+
+.tag {
+    font-size: 9px;
+    color: white;
+    margin: 4px;
+    padding: 1px;
+    font-family: monospace;
+}
+
+.subsistema {
+    background: #289;
+}
+
+.transaccion {
+    background: #395;
+}
+
+.menu-rapido-arbol {
+    margin: 0;
+    padding: 0;
+}
+
+.menu-rapido-arbol ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.menu-rapido-arbol li {
+    cursor: default;
+    list-style: none;
+    list-style-position: inside;
+    padding-left: 0;
+    border-top: 1px solid #ddd;
+}
+
+.menu-rapido-arbol a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu-rapido-arbol a:focus {
+    background: #abc;
+}
+
+.menu-rapido-arbol li.subitems {
+    list-style-image: url(../img/arbol-mas.gif);
+    white-space: nowrap;
+}
+
+.menu-rapido-arbol li.subitems>ul {
+    display: none;
+}
+
+.menu-rapido-arbol li.subitems.show {
+    list-style-image: url(../img/arbol-menos.gif);
+}
+
+.menu-rapido-arbol li.subitems.show>ul {
+    display: block;
+}
+
+.entorno-barra-menu{
+    vertical-align:middle;
+}
+
+/**********************************
+ * MENU DE BARRA
+ **********************************/
+
+.nav, .nav ul {
+    margin: 0;
+    padding: 3px;
+    list-style-type: none;
+    list-style-position: outside;
+    position: relative;
+    z-index: 10;
+    white-space: normal;
+}
+
+.nav ul {
+    position: absolute;
+    background-color: var(colorSubMenu);
+    padding: 0;
+    border-style: outset;
+    border-width: 1px;
+    display: none;
+    width: 200px;
+}
+
+.nav ul li.sub {
+    background-image: url(../img/submenu.png);
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+
+.nav ul li {
+    border-style: outset;
+    border-width: 0 0 1px 0;
+}
+
+.nav a {
+    display: block;
+    padding: 1px 5px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav ul a {
+    color: #000;
+}
+
+.nav li {
+    float: left;
+    position: relative;
+}
+
+.nav li ul a {
+    width: 190px;
+    height: auto;
+    float: left;
+}
+
+.nav ul ul {
+    top: auto;
+}   
+
+.nav li ul ul {
+    left: 140px;
+    top: 5px;
+    margin: 0 0 0 10px;
+}
+
+.nav li:hover {
+    background-color: var(colorPrimario);
+}
+
+.nav li:hover > a {
+    color: #fff;
+}
+
+.nav li:hover > ul {
+    display: block;
+}

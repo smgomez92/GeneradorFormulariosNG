@@ -1,0 +1,8 @@
+Cód.
+Sub.
+Tran.
+Cia.
+Dpto.
+Cta.
+Dep.
+Núm.

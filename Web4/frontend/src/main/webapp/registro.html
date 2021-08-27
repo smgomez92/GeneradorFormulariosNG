@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Registro</title>
+        <link rel="stylesheet" href="css/registro.css" type="text/css" />
+        <script src="js/lib/prototype.js" type="text/javascript"></script>
+        <script src="js/include.js?fitbank.registro" type="text/javascript"></script>
+    </head>
+    <body>
+        <a class="enlace" href="#" onclick="Registro.consultar();">Recargar</a>
+        <h1>Últimos eventos</h1>
+        <p id="mensajes"></p>
+        <form id="filtros">
+            <fieldset>
+                <legend>Opciones</legend>
+                <label for="numero">Número de resultados</label>
+                <div><input type="text" name="numero" id="numero" value="10" size="4" /></div>
+                <label for="actualizar">Actualizar cada</label>
+                <div><input type="text" name="actualizar" id="actualizar" value="1" size="4" /> segundos</div>
+                <label for="debug">Depurar</label>
+                <div><input type="checkbox" name="debug" id="debug" value="true" /></div>
+                <label for="sesion">Sesión actual</label>
+                <div><input type="checkbox" name="sesion" id="sesion" value="true" checked="checked"
+                            title="Mostrar registros de mi sesión actual solamente"/></div>
+                <label for="mode">Registro de details</label>
+                <div>
+                    <select name="mode" id="mode">
+                        <option value="none" selected="selected">No hacer nada</option>
+                        <option value="save">Guardar</option>
+                        <option value="replay">Reproducir</option>
+                    </select>
+                </div>
+            </fieldset>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Seq.</th>
+                        <td>Fecha</td>
+                        <td>Usuario</td>
+                        <td>CIA</td>
+                        <td>Contexto</td>
+                        <td>Tran.</td>
+                        <td>Tipo</td>
+                        <td>Estado</td>
+                        <td>Thread</td>
+                        <td title="cError">Res.</td>
+                        <td title="Request">Req.</td>
+                        <td title="Detail enviado a UCI">Ent.</td>
+                        <td title="Detail recibido UCI">Sal.</td>
+                        <td title="Response">Res.</td>
+                    </tr>
+                    <tr>
+                        <th><input type="text" name="secuencia" size="4" /></th>
+                        <td><input type="text" name="fecha" size="16" /></td>
+                        <td><input type="text" name="usuario" size="12" /></td>
+                        <td><input type="text" name="compania" size="4" /></td>
+                        <td><input type="text" name="contexto" size="4" /></td>
+                        <td><input type="text" name="tran" size="4" /></td>
+                        <td><input type="text" name="tipo" size="4" /></td>
+                        <td><input type="text" name="estado" size="10" /></td>
+                        <td><input type="text" name="thread" size="12" /></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody id="registros">
+                    <tr><td></td></tr>
+                </tbody>
+            </table>
+        </form>
+        <form action="proc/reporte_details" method="post" target="_blank">
+            <fieldset>
+                <legend>Reporte details</legend>
+                <input type="submit" name="generar" value="Generar" />
+            </fieldset>
+        </form>
+        <form action="proc/procesar" enctype="multipart/form-data" method="post" target="resultado">
+            <fieldset>
+                <legend>Procesar</legend>
+                <label for="archivo">Archivo:</label>
+                <div>
+                    <input type="file" name="archivo" id="archivo" />
+                    <input type="submit" name="procesar" value="Procesar" onclick="$('resultado').src = 'about:blank'" />
+                </div>
+                <iframe name="resultado" id="resultado"></iframe>
+            </fieldset>
+        </form>
+    </body>
+</html>

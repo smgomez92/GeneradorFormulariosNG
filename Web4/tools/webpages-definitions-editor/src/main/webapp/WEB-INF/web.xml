@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+  version="2.5">
+  <description>FitBank</description>
+  <display-name>FitBank</display-name>
+  <servlet>
+    <servlet-name>Procesador</servlet-name>
+    <servlet-class>com.fitbank.web.servlets.Procesador</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Procesador</servlet-name>
+    <url-pattern>/proc/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Procesador</servlet-name>
+    <url-pattern>/js/fitbank/proc/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Procesador</servlet-name>
+    <url-pattern>/css/proc/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Procesador</servlet-name>
+    <url-pattern>/img/proc/*</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>XUACompatibleFilter</filter-name>
+    <filter-class>com.fitbank.web.filters.XUACompatibleFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>XUACompatibleFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+</web-app>

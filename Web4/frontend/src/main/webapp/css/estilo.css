@@ -1,0 +1,26 @@
+/************************************************************************
+ * Estilos basicos para el generador
+ ************************************************************************/
+*.text-align-right {
+    text-align: right;
+}
+
+*.text-transform-capitalize {
+    text-transform: capitalize;
+}
+
+*.text-transform-uppercase {
+    text-transform: uppercase;
+}
+
+/************************************************************************
+ * Declarado en web-page.css se ponen aquí solo para que aparezcan en el
+ * generador
+ ************************************************************************/
+*.field-label {}
+
+*.criterios {}
+
+*.flotable {}
+
+*.popup {}

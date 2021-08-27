@@ -1,0 +1,81 @@
+.wizard {
+    text-align: center;
+}
+
+.wizard > label {
+    margin-right: 5px;
+}
+
+.wizard > input {
+    margin-right: 5px;
+}
+
+.wizard > fieldset {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.wizard > fieldset > * {
+    vertical-align: middle;
+}
+
+.wizard > fieldset > select {
+    width: 150px;
+    height: 150px;
+}
+
+.wizard > fieldset > div {
+    display: inline-block;
+    width: 25px;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.wizard > fieldset > div > button {
+}
+
+.wizard > fieldset > div.wizard-table {
+    width: 525px;
+    height: 150px;
+    border: 1px solid #666;
+    overflow: auto;
+    text-align: left;
+    background: white;
+}
+
+.wizard > fieldset > div > table {
+    display: inline;
+    border-collapse: collapse;
+    border-left: 0;
+}
+
+.wizard > fieldset > div > table thead tr {
+    background-color: #666;
+    color: white;
+}
+
+.wizard > fieldset > div > table thead th {
+    padding: 3px;
+    border: 1px solid #666;
+}
+
+.wizard > fieldset > div > table tbody tr:hover {
+    background: #ccc;
+}
+
+.wizard > fieldset > div > table input {
+    border: 0;
+    background: transparent;
+}
+
+.wizard > fieldset > div > table tbody th {
+    border: 1px solid #666;
+    background: #666;
+}
+
+.wizard > fieldset > div > table tbody td {
+    border: 1px solid #666;
+    padding: 2px;
+    text-align: center;
+    vertical-align: middle;
+}

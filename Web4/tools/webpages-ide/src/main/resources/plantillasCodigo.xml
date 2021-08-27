@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Contiene las plantillas de código para el editor de javascript.
+    Nota: No cambiar la indentación dentro de las etiquetas beforeCaret
+    y afterCaret. El código se pone en el editor de la misma manera como
+    se establece en este archivo.
+    
+    Formato:
+    <Completion key="Texto que activa la plantilla y que será reemplazado al presionar ctrl + espacio">
+        <beforeCaret>texto que se pondrá antes del cursor</beforeCaret>
+        <afterCaret>texto que se pondrá después del cursor.</afterCaret>
+    </Completion>
+    
+    Nota: La expresión &#10; es el caracter de salto de línea.
+-->
+
+<Completions>
+    <Completion key="switch">
+        <beforeCaret>switch (</beforeCaret>
+        <afterCaret>) {&#10;    case x:&#10;        break;&#10;    default:&#10;}</afterCaret>
+    </Completion>
+    
+    <Completion key="trycatch">
+        <beforeCaret>try {&#10;    </beforeCaret>
+        <afterCaret>&#10;} catch (err) {&#10;}</afterCaret>
+    </Completion>
+    
+    <Completion key="finally">
+        <beforeCaret>finally {&#10;    </beforeCaret>
+        <afterCaret>&#10;}</afterCaret>
+    </Completion>
+    
+    <Completion key="if">
+        <beforeCaret>if (</beforeCaret>
+        <afterCaret>) {&#10;}</afterCaret>
+    </Completion>
+    
+    <Completion key="else">
+        <beforeCaret>else {&#10;    </beforeCaret>
+        <afterCaret>&#10;}</afterCaret>
+    </Completion>
+    
+    <Completion key="throw">
+        <beforeCaret>throw new Error('</beforeCaret>
+        <afterCaret>');</afterCaret>
+    </Completion>
+    
+    <Completion key="while">
+        <beforeCaret>while (</beforeCaret>
+        <afterCaret>) {&#10;}</afterCaret>
+    </Completion>
+    
+    <Completion key="do">
+        <beforeCaret>do {&#10;    </beforeCaret>
+        <afterCaret>&#10;} while(/*condición*/);</afterCaret>
+    </Completion>
+    
+    <Completion key="for">
+        <beforeCaret>for (var i = 0; i &lt; </beforeCaret>
+        <afterCaret>; i++) {&#10;}</afterCaret>
+    </Completion>
+    
+    <Completion key="case">
+        <beforeCaret>case </beforeCaret>
+        <afterCaret>:&#10;    break;</afterCaret>
+    </Completion>
+    
+</Completions>

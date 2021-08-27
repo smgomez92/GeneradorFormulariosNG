@@ -1,0 +1,17 @@
+.warn {
+    background-color: tan;
+}
+
+.error {
+    background-color: tomato;
+}
+
+.warn.fixed {
+    text-decoration: line-through;
+    background-color: darkgrey;
+}
+
+.error.fixed {
+    text-decoration: line-through;
+    background-color: thistle;
+}

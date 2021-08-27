@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Error</title>
+        <link rel="stylesheet" href="css/mensajes.css" type="text/css" />
+        <script src="js/lib/prototype.js" type="text/javascript"></script>
+        <script src="js/include.js?fitbank.error,fitbank.plantilla" type="text/javascript"></script>
+    </head>
+    <body>
+        <a class="enlace" href="#" onClick="$('stackTrace').toggle(); return false;">Ver stacktrace</a>
+        <h1>Error al ejecutar un proceso del tipo <span id="tipo"></span></h1>
+        <p id="mensajeError"></p>
+        <pre id="stackTrace" style="display: none"></pre>
+    </body>
+</html>

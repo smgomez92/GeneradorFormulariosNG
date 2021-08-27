@@ -1,0 +1,563 @@
+@CHARSET "UTF-8";
+
+/********************************************
+ * CSS generales del entorno.
+ ********************************************/
+html,body {
+    overflow: hidden;
+    height: 100%;
+    background: #fff;
+    background-image: var(logoFondo);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    margin: 0;
+    border: 0;
+}
+
+body,td,th,textarea,select,input {
+    font-family: Arial, Helvetica, FreeSans, "Liberation Sans",
+        "Nimbus Sans L", sans-serif;
+    font-size: 12px;
+    padding: 0;
+}
+
+textarea,select,input {
+    background: white;
+    color: black;
+    border-width: 1px;
+}
+
+body.bloqueado, body.bloqueado * {
+    cursor: wait !important;
+}
+
+/********************************************
+ * BARRA
+ ********************************************/
+#entorno-barra {
+    width: 100%;
+    background: var(colorPrimario);
+    height: 25px;
+}
+
+#entorno-barra-botones {
+    float: left;
+}
+
+#entorno-barra .boton {
+    margin: 1px;
+    cursor: default;
+    text-align: center;
+    float: left;
+    padding: 1px;
+    border: 1px solid transparent;
+    background: transparent;
+    border-radius: 5px;
+}
+
+#entorno-barra .boton:hover {
+    background: #ccc;
+    border: 1px outset #999;
+}
+
+#entorno-barra .boton:active {
+    border: 1px inset #999;
+}
+
+#entorno-barra .separador {
+    margin: 5px 2.5px;
+    float: left;
+    clear: none;
+    border: 1px inset #ccc;
+    width: 0;
+    height: 16px;
+}
+
+#entorno-barra .boton img {
+    width: 16px;
+    height: 16px;
+}
+
+#entorno-barra-version {
+    color: white;
+    float: right;
+    font-weight: bold;
+    margin: 5px;
+}
+/********************************************
+ * LISTA FORMULARIOS
+ ********************************************/
+#entorno-lista-formularios button {
+    padding: 0;
+    margin: 0 3px;
+    vertical-align: top;
+    border: 1px solid transparent;
+    background: transparent;
+}
+
+#entorno-lista-formularios button:hover {
+    background: #ccc;
+    border: 1px outset #999;
+}
+
+#entorno-lista-formularios button:active {
+    border: 1px inset #999;
+}
+
+#entorno-lista-formularios button img {
+    margin: 0;
+}
+
+/********************************************
+ * TRANSACCION
+ ********************************************/
+#entorno-transaccion {
+    margin: 3px 5px 0 0;
+    float: right;
+}
+
+#cc {
+    padding: 2px 10px;
+    float: left;
+}
+
+#cc select {
+    height: 20px;
+}
+
+#cc div {
+    padding: 3px 0;
+    color: white;
+    font-weight: bold;
+    cursor: default;
+}
+
+#entorno-pt {
+    margin: 0;
+    border: 1px solid #999;
+    width: 48px;
+    padding: 1px;
+    height: 14px;
+    background: #ddd;
+    color: #000;
+}
+
+#entorno-pt:focus {
+    border: 1px solid #369;
+    background: #fff;
+}
+
+.entono-pt-activar {
+    vertical-align: top;
+    cursor: pointer;
+    position: relative;
+    margin-top: 1px;
+    display: none;
+}
+
+/********************************************
+ * FORMULARIO
+ ********************************************/
+#entorno-formulario {
+    max-height: 575px;
+    margin: 10px auto;
+    display: table;
+    clear: both;
+}
+
+#entorno-formulario.remote  {
+    max-height: 695px;
+}
+
+.entorno-formulario-titulo {
+    font-size: small;
+    padding: 0 2.5px 2.5px;
+    color: var(colorPrimario);
+    font-weight: bold;
+    text-align: center;
+    cursor: default;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+#entorno-formulario.remote .entorno-formulario-titulo {
+    display: none;
+}
+
+.lista-formularios {
+    position: absolute;
+    font-size: x-small;
+    margin-top: 2.5px;
+    text-align: left;
+    z-index: 100;
+    padding: 5px;
+    background: #ddd;
+    border: 1px solid #666;
+    left: 0;
+    right: 0;
+}
+
+.lista-formularios div {
+    font-weight: normal;
+    color: #000;
+    cursor: pointer;
+    padding-left: 5px;
+}
+
+.lista-formularios div:hover {
+    background-color: #c0c0c0;
+}
+
+.lista-formularios div.actual {
+    font-weight: bold;
+}
+
+.entorno-html {
+    padding: 5px 25px 5px 5px;
+    text-align: center;
+    overflow: auto;
+}
+
+.entorno-html form {
+    text-align: left;
+}
+
+.entorno-html * {
+    font-family: Verdana, "Bitstream Vera Sans", "DejaVu Sans",
+        "Liberation Sans", Geneva, sans-serif;
+    font-size: 11px;
+}
+
+.formulario-adjunto {
+    display: inline;
+    border: 1px solid #ccc;
+    background: #ddd;
+    margin: 5px;
+    padding: 5px;
+}
+
+.formulario-adjunto legend {
+    padding: 2px 10px;
+    color: #eee;
+    border: 1px solid #ccc;
+    background: #369;
+    border-radius: 5px;
+}
+
+/********************************************
+ * ESTATUS
+ ********************************************/
+#entorno-estatus {
+    position: absolute;
+    left: 0;
+    bottom: 35px;
+    width: 100%;
+    z-index: 2;
+    background-color: var(colorPrimario);
+    width: 100%;
+    height: 25px;
+    text-transform: uppercase;
+    font-size: small;
+    text-align: left;
+    color: white;
+}
+
+#entorno-estatus img {
+    float: right;
+    margin: 2px;
+}
+
+#entorno-estatus-contenido {
+    padding: 3px;
+    position: absolute;
+    margin-right: 165px;
+}
+
+#entorno-estatus.processing {
+    background-color: gray;
+}
+
+#entorno-estatus.warning {
+    background-color: chocolate;
+}
+
+#entorno-estatus.error {
+    background-color: #ff2f2f;
+}
+
+#estatus-temporizador {
+    width: 50px;
+    margin: 3px;
+    background: #000;
+    color: #0f0;
+    border: 2px inset #669;
+}
+
+.estatus-log.error {
+    background-color: #ff2f2f;
+}
+
+.estatus-log button {
+    border: 1px solid #999;
+    background: #ccc;
+    color: #333;
+    font-size: 7px;
+    border-radius: 10px;
+    padding: 2px;
+    margin: 2px;
+    vertical-align: top;
+    width: 15px;
+    height: 15px;
+}
+
+.estatus-log span {
+    font-weight: bold;
+}
+
+.estatus-log pre {
+    display: inline;
+    white-space: pre-wrap;
+}
+
+/********************************************
+ * INFORMACION
+ ********************************************/
+#entorno-informacion {
+    width: 100%;
+    height: 50px;
+    text-align: left;
+    background: var(logoBarra) no-repeat;
+}
+
+#entorno-informacion div {
+    float: right;
+}
+
+#entorno-informacion td {
+    white-space: nowrap;
+    margin: 2.5px 5px;
+}
+
+#entorno-informacion label {
+    font-size: xx-small;
+}
+
+#entorno-informacion input {
+    font-size: xx-small;
+    border: 1px solid #aaa;
+    background: #ddd;
+    height: 14px;
+    margin: 2.5px 2.5px;
+    padding: 0px 2px;
+}
+
+/********************************************
+ * MENSAJES
+ ********************************************/
+.estatus-debug {
+    position: absolute;
+    top: 100px;
+    left: 30px;
+    width: 950px;
+}
+
+.estatus-cuerpo {
+    padding: 5px;
+    overflow: auto;
+    height: 400px;
+}
+
+/********************************************
+ * TECLAS
+ ********************************************/
+#entorno-teclas {
+    text-align: center;
+    background: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+}
+
+#entorno-teclas .tecla {
+    margin: 2.5px 5px;
+    background: var(fondoBoton) no-repeat center;
+    color: white;
+    font-size: 8pt;
+    width: 75px;
+    height: 25px;
+    cursor: pointer;
+    border: 0;
+}
+
+#entorno-teclas .tecla img {
+    vertical-align: middle;
+}
+
+#entorno-teclas .tecla span {
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+#entorno-boton-alternar-teclas {
+    position: absolute;
+    left: 3px;
+    bottom: 5px;
+    width: 16px;
+    height: 16px;
+    z-index: 100;
+    background: url(../img/teclado.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: none;
+}
+
+/********************************************
+ * NOTIFICACION
+ ********************************************/
+#entorno-notificacion-lista {
+    position: absolute;
+    right: 10px;
+    top: 65px;
+    background-color: #ffc;
+    border: 1px solid #000;
+    overflow: auto;
+    padding: 3px;
+}
+
+table.tabla.notificaciones > thead td {
+  font-weight: bold;
+  background: #369;
+  color: white;
+}
+
+table.tabla.notificaciones td {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/********************************************
+ * VENTANA
+ ********************************************/
+.ventana {
+    display: block;
+    position: relative;
+    z-index: 500;
+    width: auto;
+}
+
+.ventana-fondo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 499;
+}
+
+.titulo {
+    background-color: #369;
+    border-radius: 5px 5px 0 0;
+    border: 3px solid #306090;
+    border-bottom: 0;
+    color: #fff;
+    font-weight: bold;
+    cursor: default;
+    text-align: center;
+    padding: 2px;
+    width: auto;
+    border-bottom: 0;
+}
+
+.titulo img {
+    margin: 1px;
+    float: right;
+    cursor: pointer;
+}
+
+.ventana .contenido {
+    border: 3px solid #abc;
+    border-top: 0;
+    padding: 5px;
+    background-color: #bcd;
+    overflow: auto;
+}
+
+/********************************************
+ * ESCANEO
+ ********************************************/
+
+.escaneo-imagen-container {
+    margin: 0 auto;
+    max-width: 600px;
+    max-height: 400px;
+    overflow: auto;
+    text-align: center;
+}
+
+.escaneo-botones {
+    padding: 5px;
+    text-align: center;
+}
+
+.escaneo-botones button {
+    margin: 5px;
+}
+
+/********************************************
+ * FLUJOS BPM
+ ********************************************/
+
+.bpm-back, .bpm-show-level, .bpm-level-actual {
+    position: absolute;
+    filter: alpha(opacity=30);
+    opacity: 0.3;
+    border-radius: 15px;
+}
+
+.bpm-level-actual, .bpm-show-level {
+    background-color: #000000;
+    border-color: #000000;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.bpm-back {
+    left: 10px;
+    top: 10px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: url(../img/bpm/back.png) no-repeat center;
+}
+
+.bpm-back:hover {
+    opacity: 1;
+}
+
+.bpm-show-level {
+    background-color: #00AAFF;
+    cursor: pointer;
+}
+
+.bpm-tab {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+}
+
+.bpm-ti bpm-td {
+    background-color: #999;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.bpm-img {
+    vertical-align: middle;
+    width: 30px;
+}

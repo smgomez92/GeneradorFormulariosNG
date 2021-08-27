@@ -1,0 +1,243 @@
+<html>
+    <head>
+        <title>Totalizador</title>
+    </head>
+    <script src="js/include.js?fitbank.ui.dispensadora" type="text/javascript">
+    </script>
+    <body bgcolor="#e5e5e5" onLoad="document.getElementById('tusuario').focus();">
+        <form name="totalizador" id="totalizador">
+            <table width="200" border="0" align="center" bgcolor="#BBCCDD" >
+                <tr>
+                    <td colspan="7" style="background-image:url(img/logo.png);background-position:left;background-repeat:no-repeat;height:55px;background-color:#e5e5e5;">
+                        <p style="color:#0033FF;font-size:17px;font-weight:bold;text-align:center;">DISPENSADORA DE EFECTIVO</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" align="right"><b>Ingrese el total a dispensar</b></td>
+                    <td colspan="2">
+                        <input type="text" name="tusuario" id="tusuario" style="width:163px;background-color:#FFFFFF;text-align:right;" onBlur="if(this.value !=''){valorUsuario = Dispensadora.formatoNumero(this.value);this.value = valorUsuario;}" onKeyDown="Dispensadora.ingresoNumeros(event,this,'b1','boton',100);" onKeyUp="Dispensadora.sumaTotal();" onFocus="if(this.value!=''){this.value=Dispensadora.elimarComas(this.value);}">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="right">
+                        <b>Excedente / Faltante
+                        </b>
+                    </td>
+                    <td colspan="2">
+                        <input type="text" name="sobrante" id="sobrante" readonly="true" style="background-color:#BBCCDD;width:163px;font-size:14px;font-weight:bold;text-align:right;color:#FF3399">
+                    </td>
+                    <td align="right">
+                        <b>TOTAL
+                        </b>
+                    </td>
+                    <td colspan="2">
+                        <input type="text" name="total" id="total" readonly="true" value="0.00" style="background-color:#BBCCDD;width:163px;text-align:right;font-size:15px;font-weight:bold;color:#FF0000;">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td colspan="3">
+                        <b>BILLETES&nbsp;&nbsp;&nbsp;
+                            <img src="img/dispensadora/dinero.jpg" width="50" height="27">
+                        </b>
+                    </td>
+                    <td>&nbsp;&nbsp;
+                    </td>
+                    <td colspan="3">
+                        <b>MONEDAS&nbsp;&nbsp;&nbsp;
+                            <img src="img/dispensadora/monedas.jpg" width="50" height="27">
+                        </b>
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>
+                        <b>Denominaci&oacute;n
+                        </b>
+                    </td>
+                    <td>
+                        <b>Cantidad
+                        </b>
+                    </td>
+                    <td>
+                        <b>Subtotal
+                        </b>
+                    </td>
+                    <td>&nbsp;&nbsp;
+                    </td>
+                    <td>
+                        <b>Denominaci&oacute;n
+                        </b>
+                    </td>
+                    <td>
+                        <b>Cantidad
+                        </b>
+                    </td>
+                    <td>
+                        <b>Subtotal
+                        </b>
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>100.00</td>
+                    <td>
+                        <input type="text" name="b1" id="b1" style="width:60px;text-align:right;" onKeyDown="Dispensadora.ingresaNumerosNaturales(event,this,'b2','tusuario',100);">
+                    </td>
+                    <td>
+                        <input type="text" name="tb1" id="tb1" readonly="true" value="0.00" style="width:100px;background-color:#BBBBBB;text-align:right;color:#FFFFFF;">
+                    </td>
+                    <td>&nbsp;&nbsp;
+                    </td>
+                    <td >1.00
+                    </td>
+                    <td>
+                        <input type="text" name="m1" id="m1" style="width:60px;text-align:right;" onKeyDown="Dispensadora.ingresaNumerosNaturales(event,this,'m2','b7',1);">
+                    </td>
+                    <td>
+                        <input type="text" name="tm1" id="tm1" readonly="true" value="0.00" style="width:100px;background-color:#BBBBBB;text-align:right;color:#FFFFFF;">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>50.00
+                    </td>
+                    <td>
+                        <input type="text" name="b2" id="b2" style="width:60px;text-align:right;" onKeyDown="Dispensadora.ingresaNumerosNaturales(event,this,'b3','b1',50);">
+                    </td>
+                    <td>
+                        <input type="text" name="tb2" id="tb2" readonly="true" value="0.00" style="width:100px;background-color:#BBBBBB;text-align:right;color:#FFFFFF;">
+                    </td>
+                    <td>&nbsp;&nbsp;
+                    </td>
+                    <td >0.50
+                    </td>
+                    <td>
+                        <input type="text" name="m2" id="m2" style="width:60px;text-align:right;" onKeyDown="Dispensadora.ingresaNumerosNaturales(event,this,'m3','m1',0.50);">
+                    </td>
+                    <td>
+                        <input type="text" name="tm2" id="tm2" readonly="true" value="0.00" style="width:100px;background-color:#BBBBBB;text-align:right;color:#FFFFFF;">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>20.00
+                    </td>
+                    <td>
+                        <input type="text" name="b3" id="b3" style="width:60px;text-align:right;" onKeyDown="Dispensadora.ingresaNumerosNaturales(event,this,'b4','b2',20);">
+                    </td>
+                    <td>
+                        <input type="text" name="tb3" id="tb3" readonly="true" value="0.00" style="width:100px;background-color:#BBBBBB;text-align:right;color:#FFFFFF;">
+                    </td>
+                    <td>&nbsp;&nbsp;
+                    </td>
+                    <td >0.25
+                    </td>
+                    <td>
+                        <input type="text" name="m3" id="m3" style="width:60px;text-align:right;" onKeyDown="Dispensadora.ingresaNumerosNaturales(event,this,'m4','m2',0.25);">
+                    </td>
+                    <td>
+                        <input type="text" name="tm3" id="tm3" readonly="true" value="0.00" style="width:100px;background-color:#BBBBBB;text-align:right;color:#FFFFFF;">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>10.00
+                    </td>
+                    <td>
+                        <input type="text" name="b4" id="b4" style="width:60px;text-align:right;" onKeyDown="Dispensadora.ingresaNumerosNaturales(event,this,'b5','b3',10);">
+                    </td>
+                    <td>
+                        <input type="text" name="tb4" id="tb4" readonly="true" value="0.00" style="width:100px;background-color:#BBBBBB;text-align:right;color:#FFFFFF;">
+                    </td>
+                    <td>&nbsp;&nbsp;
+                    </td>
+                    <td >0.10
+                    </td>
+                    <td>
+                        <input type="text" name="m4" id="m4" style="width:60px;text-align:right;" onKeyDown="Dispensadora.ingresaNumerosNaturales(event,this,'m5','m3',0.10);">
+                    </td>
+                    <td>
+                        <input type="text" name="tm4" id="tm4" readonly="true" value="0.00" style="width:100px;background-color:#BBBBBB;text-align:right;color:#FFFFFF;">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>5.00
+                    </td>
+                    <td>
+                        <input type="text" name="b5" id="b5" style="width:60px;text-align:right;" onKeyDown="Dispensadora.ingresaNumerosNaturales(event,this,'b6','b4',5);">
+                    </td>
+                    <td>
+                        <input type="text" name="tb5" id="tb5" readonly="true" value="0.00" style="width:100px;background-color:#BBBBBB;text-align:right;color:#FFFFFF;">
+                    </td>
+                    <td>&nbsp;&nbsp;
+                    </td>
+                    <td >0.05
+                    </td>
+                    <td>
+                        <input type="text" name="m5" id="m5" style="width:60px;text-align:right;" onKeyDown="Dispensadora.ingresaNumerosNaturales(event,this,'m6','m4',0.05);">
+                    </td>
+                    <td>
+                        <input type="text" name="tm5" id="tm5" readonly="true" value="0.00" style="width:100px;background-color:#BBBBBB;text-align:right;color:#FFFFFF;">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>2.00
+                    </td>
+                    <td>
+                        <input type="text" name="b6" id="b6" style="width:60px;text-align:right;" onKeyDown="Dispensadora.ingresaNumerosNaturales(event,this,'b7','b5',2);">
+                    </td>
+                    <td>
+                        <input type="text" name="tb6" id="tb6" readonly="true" value="0.00" style="width:100px;background-color:#BBBBBB;text-align:right;color:#FFFFFF;">
+                    </td>
+                    <td>&nbsp;&nbsp;
+                    </td>
+                    <td >0.01
+                    </td>
+                    <td>
+                        <input type="text" name="m6" id="m6" style="width:60px;text-align:right;" onKeyDown="Dispensadora.ingresaNumerosNaturales(event,this,'boton','m5',0.01);">
+                    </td>
+                    <td>
+                        <input type="text" name="tm6" id="tm6" readonly="true" value="0.00" style="width:100px;background-color:#BBBBBB;text-align:right;color:#FFFFFF;">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>1.00
+                    </td>
+                    <td>
+                        <input type="text" name="b7" id="b7" style="width:60px;text-align:right;" onKeyDown="Dispensadora.ingresaNumerosNaturales(event,this,'m1','b6',1);">
+                    </td>
+                    <td>
+                        <input type="text" name="tb7" id="tb7" readonly="true" value="0.00" style="width:100px;background-color:#BBBBBB;text-align:right;color:#FFFFFF;">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td colspan="2" align="right">
+                        <b>Subtotal Billetes
+                        </b>
+                    </td>
+                    <td>
+                        <input type="text" name="stb" id="stb" readonly="true" value="0.00" style="background-color:#BBCCDD;width:100px;text-align:right;font-weight:bold;color:#000000;">
+                    </td>
+                    <td>&nbsp;&nbsp;
+                    </td>
+                    <td colspan="2" align="right">
+                        <b>Subtotal Monedas
+                        </b>
+                    </td>
+                    <td>
+                        <input type="text" name="stm" id="stm" readonly="true" value="0.00" style="background-color:#BBCCDD;width:100px;text-align:right;font-weight:bold;color:#000000;">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td colspan="7" style="background-color:#e5e5e5;">
+                        <input type="button" id="boton" name="boton" value="Aceptar" onKeyDown="Dispensadora.ingresaNumerosNaturales(event,this,'tusuario','m6');" onclick="Dispensadora.ingresaNumerosNaturales(event,this,'tusuario','m6');">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+    <script language="JavaScript">
+        /**
+         * Función que se encarga de detener que se cargue la ayuda del internet explorer
+         */
+        document.onhelp = function(){
+            event.cancelBubble = true;
+            event.returnValue = false;
+        }
+    </script>
+</html>

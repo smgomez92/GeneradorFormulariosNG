@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.fitbank.web</groupId>
+    <artifactId>web4</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>serializacion</artifactId>
+  <version>1.2-SNAPSHOT</version>
+  <name>FitBank Web - Web 4 - Serializacion de XML, XHTML, PDF, etc</name>
+  <dependencies>
+    <dependency>
+      <groupId>com.fitbank.herramientas</groupId>
+      <artifactId>util</artifactId>
+      <version>1.4-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xercesImpl</artifactId>
+    </dependency>
+    <dependency>
+      <artifactId>xml-apis</artifactId>
+      <groupId>xml-apis</groupId>
+    </dependency>
+  </dependencies>
+</project>

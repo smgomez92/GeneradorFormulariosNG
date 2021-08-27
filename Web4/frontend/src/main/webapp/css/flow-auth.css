@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+
+/********************************************
+ * CSS de la página de autorización.
+ ********************************************/
+*, .data {
+    font-family: Arial, Helvetica, FreeSans, "Liberation Sans",
+        "Nimbus Sans L", sans-serif;
+    font-size: small;
+}
+
+body > table {
+    width: 100%;
+}
+
+#logo {
+    display: none;
+}
+
+#date {
+    font-size: xx-small;
+    color: #999;
+    margin: 4px 0;
+    float: right;
+}
+
+#title {
+    font-weight: bold;
+    color: #666;
+    border-bottom: 1px solid #999;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+}
+
+.data {
+    font-size: small;
+    text-align: justify;
+}
+
+.detail {
+    padding: 5px 0 0 0;
+}
+
+.border {
+    border: 0;
+    background-color: transparent;
+}
+
+td.border > table, td.border td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    padding: 3px;
+}
+
+td.border td:first-child {
+    background: #fafafa;
+}

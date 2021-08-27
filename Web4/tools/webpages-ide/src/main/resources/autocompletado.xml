@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Plantillas que contienen la definición y documentación de funciones de
+    contexto para el editor de javascript.
+    
+    Formato:
+    Grupo de autocompletado para una expresión regular determinada.
+    <Completions match="regex">
+        match es una expresión regular que se valida contra el texto ingresado.
+        Si el texto coincide con esta expresión regular, aparecerá en la ventana
+        de opciones de autocompletado todas las opciones dentro de esta etiqueta
+        Completions. El valor especial ifg:globalScope hace que los ítems se muestren
+        en la lista por defecto, para autocompletado global. Éste valor está
+        definido como constante GLOBAL_SCOPE en FitbankCompletionProvider.
+        
+        Formato de autocompletado para propiedades
+        <Completion replaceText="Texto que se pondrá al presionar enter"
+        memberType="actualmete se acepta property o function. Especifica cómo
+            se tratará esta opción de autocompletado. Las funciones pueden tener
+            autocompletado de parámetros."
+        dataType="tipo de dato por defecto de la propiedad">
+            <doc>Descripción de la propiedad.</doc>
+            <defined-in>Opcional. Información extra que indica en qué lugar está
+                la variable definida.</defined-in>
+        </Completion>
+        
+        Formato de autocompletado para funciones
+        <Completion replaceText="Texto a reemplazar"
+            memberType="function"
+            returnType="Tipo de dato de retorno de la función">
+            
+            <param name="Nombre del parámetro de la función"
+                type="Tipo de dato esperado del parámetro"
+                paramCompletion="Opcional. Especifica si el parámetro desplegará opciones de
+                autocompletado. Si se omite este atributo o se deja en blanco, no
+                aparecerán opciones de autocompletado para el parámetro.">Poner aquí una descripción
+                del parámetro.</param>
+            
+            <doc>Descripción de la función.</doc>
+        </Completion>
+        
+    </Completions>
+    
+-->
+
+<CompletionsList>
+    
+    <Completions match="ifg:globalScope">
+        
+        <Completion replaceText="c" memberType="property" dataType="Object">
+            <doc>Referencia al contexto actual.</doc>
+            <defined-in>entorno.js</defined-in>
+        </Completion>
+        
+        <Completion replaceText="Validar" memberType="property" dataType="Object">
+            <doc>Contiene métodos para marcar y desmarcar un campo con error.</doc>
+            <defined-in>validar.js</defined-in>
+        </Completion>
+        
+        <Completion replaceText="Estatus" memberType="property" dataType="Object">
+            <doc>Contiene métodos para controlar la barra de estado en la parte
+            inferior del entorno.</doc>
+            <defined-in>estatus.js</defined-in>
+        </Completion>
+        
+        <Completion replaceText="Tabs" memberType="property" dataType="Object">
+            <doc>Contiene métodos para controlar las pestañas con enlaces de
+            un formulario.</doc>
+            <defined-in>tabs.js</defined-in>
+        </Completion>
+        
+    </Completions>
+    
+    <Completions match="(?i)^c\..*">
+    
+        <Completion replaceText="accountingDate" memberType="property" dataType="Date">
+            <doc>Devuelve un objeto tipo Date que representa la fecha contable.</doc>
+        </Completion>
+    
+        <Completion replaceText="user" memberType="property" dataType="String">
+            <doc>Devuelve el usuario actualmente en sesión.</doc>
+        </Completion>
+    
+        <Completion replaceText="subsystem" memberType="property" dataType="String">
+            <doc>Devuelve el número de subsistema del formulario actual.</doc>
+        </Completion>
+    
+        <Completion replaceText="transaction" memberType="property" dataType="String">
+            <doc>Devuelve el número de transacción del formulario actual.</doc>
+        </Completion>
+    
+        <Completion replaceText="formulario" memberType="property" dataType="Formulario">
+            <doc>Obtiene una referencia al objeto que representa al formulario actual.</doc>
+        </Completion>
+    
+        <Completion replaceText="form" memberType="property" dataType="HTMLFormElement">
+            <doc>Devuelve el nodo HTML que contiene al formulario actual.</doc>
+        </Completion>
+    
+        <Completion replaceText="currency" memberType="property" dataType="String">
+            <doc>Devuelve el código de moneda actual, por ejemplo 'USD'.</doc>
+        </Completion>
+    
+        <Completion replaceText="ipAddress" memberType="property" dataType="String">
+            <doc>Devuelve la dirección IP de la terminal actual.</doc>
+        </Completion>
+        
+        <Completion replaceText="company" memberType="property" dataType="String">
+            <doc>Devuelve el código de la compañía actual.</doc>
+        </Completion>
+        
+        <Completion replaceText="originBranch" memberType="property" dataType="String">
+            <doc>Devuelve el código de la sucursal.</doc>
+        </Completion>
+        
+        <Completion replaceText="originOffice" memberType="property" dataType="String">
+            <doc>Devuelve el código de la matriz.</doc>
+        </Completion>
+        
+        <Completion replaceText="language" memberType="property" dataType="String">
+            <doc>Devuelve el idioma del formulario establecido al momento de crearlo.</doc>
+        </Completion>
+        
+        <Completion replaceText="terminal" memberType="property" dataType="String">
+            <doc>Devuelve la IP de la terminal actual.</doc>
+        </Completion>
+        
+        <Completion replaceText="version" memberType="property" dataType="String">
+            <doc>Devuelve el contenido del campo VER del detail de carga del formulario.</doc>
+        </Completion>
+        
+        <Completion replaceText="versionEsquema" memberType="property" dataType="String">
+            <doc>Devuelve la versión de la aplicación actual.</doc>
+        </Completion>
+    
+        <Completion replaceText="$" memberType="function" returnType="FormElement[]">
+            <param name="name" type="String" paramCompletion="widgetNames">Nombre del elemento a
+            buscar dentro del formulario.</param>
+            <param name="record" type="int" optional="true">Opcional. Si se especifica
+            un registro, esta función devuelve el elemento directamente, o null en caso de
+            no existir elementos con el nombre dado.
+            </param>
+            <doc>Devuelve el elemento HTML visible que pertenece al objeto de nombre dado.
+            Para el caso de checkboxes, botones, botones de opción y demás campos
+            que manejen un componente visual y un campo oculto, esta función
+            devolverá el componente visual que pertenece al campo con nombre dado. Así, ya
+            no es necesario acceder a estos componentes mediante la propiedad .checkbox
+            o .widget, sino que esta función los devuleve directamente.
+            Si el nombre dado referencia a un campo de texto, se devuelve el mismo.
+            </doc>
+        </Completion>
+    
+        <Completion replaceText="$$" memberType="function" returnType="FormElement[]">
+            <param name="cssRule" type="String">Selector CSS que se usará para buscar elementos.</param>
+            <doc>Devuelve un arreglo de elementos del formulario actual que cumplan con la regla
+            CSS proporcionada. Por ejemplo, la llamada c.$$('.error') devolverá
+            todos los elementos que tengan la clase CSS error aplicada.
+            </doc>
+        </Completion>
+    
+        <Completion replaceText="$N" memberType="function" returnType="FormElement[]">
+            <param name="name" type="String" paramCompletion="widgetNames">Nombre del elemento a buscar
+            dentro del formulario.</param>
+            <param name="record" type="int" optional="true">Opcional. Si se especifica
+            un registro, esta función devuelve el elemento directamente, o null en caso de
+            no existir elementos con el nombre dado.
+            </param>
+            <doc>Devuelve un arreglo con los elementos que tengan el nombre dado.</doc>
+        </Completion>
+    
+        <Completion replaceText="$V" memberType="function" returnType="Object[]">
+            <param name="name" type="String" paramCompletion="widgetNames">Nombre del elemento a buscar
+            dentro del formulario.</param>
+            <param name="record" type="int" optional="true">Opcional. Si se especifica
+            un registro, esta función devuelve el valor del elemento en dicho registro.
+            </param>
+            <doc>Devuelve un arreglo con los valores de los elementos que tengan el nombre dado.</doc>
+        </Completion>
+    
+        <Completion replaceText="consultar" memberType="function" returnType="void">
+            <param name="paginacion" type="int" optional="true">Opcional. Indica la dirección
+            de paginación del formulario actual. Si no se especifica o es cero, la consulta
+            no realiza paginación. Un valor igual a 1 hace que la consulta pagine
+            hacia adelante y -1 hace que pagine hacia atrás.</param>
+            <param name="callback" type="Function" optional="true">Opcional. Función que se
+            invoca cuando se ha terminado de hacer la consulta y no ocurrieron errores en el proceso.
+            </param>
+            <doc>Hace que el formulario actual se consulte.</doc>
+        </Completion>
+    
+        <Completion replaceText="mantener" memberType="function" returnType="void">
+            <param name="callback" type="Function" optional="true">Opcional. Función que se
+            invoca al terminar el mantenimiento con éxito y antes de que se produzca
+            una consulta en caso de que el formulario tenga postQuery = true.
+            </param>
+            <doc>Guarda los datos del formulario.</doc>
+        </Completion>
+        
+        <Completion replaceText="cargar" memberType="function" returnType="void">
+            <param name="opciones" type="Object">Objeto con parámetros que indican el formulario a cargar
+            y cómo cargarlo. También puede ser una cadena que indica el formulario a cargar, por
+            ejemplo "00-0001".
+            Las opciones que se pueden enviar son las siguientes:
+            <ul>
+                <li><b>subsistema:</b> <i>(String)</i> Especifica el número de subsistema del formulario a cargar,
+                por ejemplo "02".</li>
+                <li><b>transaccion:</b> <i>(String)</i> Especifica el número de transacción
+                del formulario a cargar. Por ejemplo: "0005".</li>
+                <li><b>campos:</b> <i>(Object)</i> Objeto que especifica nombres de campos y valores
+                que se van a pasar a esos campos del nuevo formulario.</li>
+                <li><b>nameMap:</b> <i>(HashMap)</i> Objeto que define mapeamiento de nombres desde el formulario
+                actual al formulario de destino. Se usa en ReturnLinks. El objeto debe tener la siguiente forma:<br/>
+                <code>{ "nameFormularioDestino": "nameFormularioActual", ... }</code></li>
+                <li><b>objetoJS:</b> <i>(Object)</i> Usado en Links. Se puede usar este objeto
+                para pasar cualquier tipo de información entre formularios en comportamientos Link.</li>
+                <li><b>st:</b> <i>(String)</i> Se puede especificar el formulario a cargar en este parámetro
+                de la siguiente manera: {st: "023200"}. Si se da un valor a este parámetro,
+                se ignorarán los parámetros subsistema y transacción.</li>
+                <li><b>action:</b> <i>(String)</i> Puede tener los valores "PREV", "NEXT" o "END".
+                </li>
+                <li><b>fields:</b> <i>(Object)</i> Es el mapa de nombres de campos en la forma
+                { "nameFormularioActual": "id", ... }</li>
+                <li><b>consulta:</b> <i>(boolean)</i> Indica si se debe realizar una consulta
+                apenas se carga el formulario. Si no se especifica, se toma como true.</li>
+                <li><b>registro:</b> <i>(Number)</i> Número de registro. Por defecto es 0.</li>
+            </ul>
+            </param>
+            <doc>Carga un nuevo formulario dentro del entorno.</doc>
+        </Completion>
+    
+    </Completions>
+    
+    <Completions match="(?i)^c\.formulario\..*">
+        
+        <Completion replaceText="vars" memberType="property" dataType="Array[Object]">
+            <doc>Devuelve un arreglo de variables propias del formulario. Aquí se pueden
+            guardar variables temporables disponibles para todo el formulario.</doc>
+            <defined-in>formulario.js</defined-in>
+        </Completion>
+        
+    </Completions>
+    
+    <Completions match="(?i)^validar\..*">
+        
+        <Completion replaceText="error" memberType="function" returnType="void">
+            <param name="element" type="HTMLElement">Referencia al campo a pintar. Típicamente
+            c.$('campo')</param>
+            <param name="e" type="Object">Mensaje a mostrar en el estatus.
+            Se puede pasar también un objeto Error del cual se obtendrá el mensaje.
+            </param>
+            <param name="id" type="String" optional="true">Opcional. Sufijo que indica
+            la causa del error. Si no se especifica, este parámetro se establece
+            en "default". Caso contrario, debe pasarse este mismo valor
+            a Validar.ok para quitar la marca de error del campo.</param>
+            <doc>Marca con error el campo especificado.</doc>
+        </Completion>
+        
+        <Completion replaceText="ok" memberType="function" returnType="void">
+            <param name="element" type="HTMLElement">Referencia al campo a desmarcar.
+            Típicamente será c.$('campo')</param>
+            <param name="id" type="String" optional="true">Opcional. Sufijo que indica
+            la causa del error. Debe tener el mismo valor que el usado en Validar.error
+            para que se desmarque el campo.
+            Si no se especifica, este parámetro se establece
+            en "default".</param>
+            <doc>Quita la marca de error del campo especificado.</doc>
+        </Completion>
+        
+    </Completions>
+    
+    <Completions match="(?i)^estatus\..*">
+        
+        <Completion replaceText="mensaje" memberType="function" returnType="void">
+            <param name="mensajeUsuario" type="String">Mensaje que se mostrará
+            en la barra de estado.</param>
+            <param name="stack" type="String" optional="true">Opcional. En caso
+            de error, se pasa aquí la pila de llamadas (stacktrace) del error. Puede ser null.</param>
+            <param name="className" type="String" optional="true">Opcional. Si se omite
+            o se pasa "", la barra permanece con su color natural. Si se
+            pasa "error", la barra de estado cambiará a color rojo.</param>
+            <param name="owner" type="HTMLElement" optional="true">Opcional. Elemento que es
+            "dueño" del mensaje.</param>
+            <doc>Muestra un mensaje en la barra de estado del entorno.</doc>
+        </Completion>
+        
+        <Completion replaceText="limpiar" memberType="function" returnType="void">
+            <param name="owner" type="HTMLElement" optional="true">Opcional. Si no se
+            pasa el entorno se limpia. Si se especifica un dueño, éste debe ser el mismo
+            que se pasó en la última llamada a Estatus.mensaje para que se limpie.
+            </param>
+            <doc>Pone la barra de estado en su color normal y muestra el mensaje "OK"</doc>
+        </Completion>
+        
+    </Completions>
+    
+</CompletionsList>

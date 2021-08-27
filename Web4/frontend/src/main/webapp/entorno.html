@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="Cache-Control" content="no-cache" />
+        <title>Entorno FitBank</title>
+        <link rel="stylesheet" href="css/main.css" type="text/css" />
+        <link rel="stylesheet" href="css/tabs.css" type="text/css" />
+        <link rel="stylesheet" href="css/morris.css" type="text/css" />
+        <!--[if IE]>
+                <link rel="stylesheet" href="css/main-ie.css" type="text/css" />
+        <![endif]-->
+        <script src="js/lib/prototype.js" type="text/javascript"></script>
+
+        <!-- Librerias JQuery y compatibilidad -->
+        <script src="js/lib/jquery.js" type="text/javascript"></script>
+        <script src="js/lib/jquerynoconflicts.js" type="text/javascript"></script>
+
+        <!-- Librerias MorrisJS y RaphaelJS para graficos -->
+        <script src="js/lib/morrisjs/raphael.min.js"></script>
+        <script src="js/lib/morrisjs/morris.min.js"></script>
+
+        <script src="js/include.js?fitbank.config" type="text/javascript"></script>
+    </head>
+    <body class="entorno" onunload="/* Necesario para forzar recarga */">
+        <div id="entorno-informacion"></div>
+        <div id="entorno-barra">
+            <div id="cc"></div>
+            <div id="entorno-barra-botones"></div>
+            <div id="entorno-barra-menu"></div>
+            <div id="entorno-barra-version"></div>
+        </div>
+        <div id="entorno-formulario"></div>
+        <div id="entorno-teclas"></div>
+        <div id="entorno-estatus">
+            <span id="entorno-estatus-contenido"></span>
+            <span id="entorno-transaccion" style="display: none">
+                <span id="entorno-lista-formularios"></span>
+                Transacción:
+                <input id="entorno-pt" autocomplete="off" tabindex="0" />
+            </span>
+        </div>
+    </body>
+</html>

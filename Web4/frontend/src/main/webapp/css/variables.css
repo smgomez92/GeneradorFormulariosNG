@@ -1,0 +1,9 @@
+@variables {
+    colorPrimario: #013473;
+    colorSecundario: #003399;
+    colorSubMenu: #f0f0f0;
+    logo: url(img/logo.png);
+    logoFondo: url(img/fondo.png);
+    logoBarra: url(img/fondo-barra.png);
+    fondoBoton: url(img/fondo-boton.png);
+}

@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+
+/********************************************
+ * Clases CSS para los tooltips.
+ ********************************************/
+
+div.contenedor-tooltip {
+    position: relative;
+}
+
+div.globo-tooltip {
+    zoom: 1;
+    width: 207px;
+    position: absolute;
+}
+
+div.tooltip-derecha div.fondoGlobo {
+    background-image: url(../img/tooltips/derecha.png);
+}
+
+div.tooltip-izquierda div.fondoGlobo {
+    background-image: url(../img/tooltips/izquierda.png);
+}
+
+div.tooltip-superior {
+    min-height: 28px;
+    padding: 20px 20px 0px;
+    text-shadow: 1px 1px #000000;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: normal;
+    color: #FFFFFF;
+    font-size: 11px;
+    background: url(../img/tooltips/izquierda.png) top left no-repeat;
+}
+
+div.tooltip-inferior {
+    padding: 0px 20px 10px;
+    font-size: 11px;
+    color: #FFFFFF;
+    text-shadow: 1px 1px #000000;
+    text-align: left;
+    text-transform: uppercase;
+    background: url(../img/tooltips/izquierda.png) bottom left no-repeat;
+    height: 18px;
+}

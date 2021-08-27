@@ -1,0 +1,90 @@
+@CHARSET "UTF-8";
+
+span > input[type=checkbox],
+span > input[type=radio]
+{
+	padding: 0;
+	margin: 0;
+	height: 12px;
+	width: 12px;
+	opacity: 0;
+}
+span > label
+{
+	line-height: 12px;
+	padding: 0 0 0 14px;
+    margin-left: -12px;
+}
+
+span:not(#foo) > input[type=checkbox]:hover + label, span:not(#foo) > input[type=checkbox]:focus + label,
+span:not(#foo) > input[type=checkbox] + label:hover, span:not(#foo) > input[type=checkbox]:focus + label,
+span:not(#foo) > input[type=radio]:hover + label, span:not(#foo) > input[type=radio]:focus + label,
+span:not(#foo) > input[type=radio] + label:hover, span:not(#foo) > input[type=radio]:focus + label			{ }
+
+span:not(#foo) > input[type=checkbox] + label,
+span:not(#foo) > input[type=radio] + label
+{
+	background: url(../img/gr_custom-inputs.png) 0 -1px no-repeat;
+	height: 12px;
+}
+
+span:not(#foo) > input[type=checkbox].error + label,
+span:not(#foo) > input[type=radio].error + label
+{
+	background: url(../img/gr_custom-inputs-error.png) 0 -1px no-repeat;
+}
+
+span:not(#foo) > input[type=radio] + label										{ background-position: 0 -121px; }
+
+/* Checked styles */
+span:not(#foo) > input[type=radio]:checked + label 							{ background-position: 0 -181px; }
+span:not(#foo) > input[type=checkbox]:checked + label 							{ background-position: 0 -61px; }
+span:not(#foo) > input[type=checkbox]:hover:checked + label,
+span:not(#foo) > input[type=checkbox]:focus:checked + label,
+span:not(#foo) > input[type=checkbox]:checked + label:hover,
+span:not(#foo) > input[type=checkbox]:focus:checked + label 					{ background-position: 0 -76px; }
+span:not(#foo) > input[type=radio]:hover:checked + label,
+span:not(#foo) > input[type=radio]:focus:checked + label,
+span:not(#foo) > input[type=radio]:checked + label:hover,
+span:not(#foo) > input[type=radio]:focus:checked + label 						{ background-position: 0 -196px; }
+
+/* Hover & Focus styles */
+span:not(#foo) > input[type=checkbox]:hover + label,
+span:not(#foo) > input[type=checkbox]:focus + label,
+span:not(#foo) > input[type=checkbox] + label:hover 							{ background-position: 0 -16px; }
+span:not(#foo) > input[type=radio]:hover + label,
+span:not(#foo) > input[type=radio]:focus + label,
+span:not(#foo) > input[type=radio] + label:hover								{ background-position: 0 -161px; }
+
+/* Active styles */
+span:not(#foo) > input[type=checkbox]:active + label,
+span:not(#foo) > input[type=checkbox] + label:hover:active						{ background-position: 0 -31px; }
+span:not(#foo) > input[type=radio]:active + label,
+span:not(#foo) > input[type=radio] + label:hover:active						{ background-position: 0 -151px; }
+span:not(#foo) > input[type=checkbox]:active:checked + label,
+span:not(#foo) > input[type=checkbox]:checked + label:hover:active				{ background-position: 0 -91px; }
+span:not(#foo) > input[type=radio]:active:checked + label,
+span:not(#foo) > input[type=radio]:checked + label:hover:active				{ background-position: 0 -261px; }
+
+/* Disabled styles */
+span:not(#foo) > input[type=checkbox]:disabled + label,
+span:not(#foo) > input[type=checkbox]:hover:disabled + label,
+span:not(#foo) > input[type=checkbox]:focus:disabled + label,
+span:not(#foo) > input[type=checkbox]:disabled + label:hover,
+span:not(#foo) > input[type=checkbox]:disabled + label:hover:active			{ background-position: 0 -46px; }
+span:not(#foo) > input[type=radio]:disabled + label,
+span:not(#foo) > input[type=radio]:hover:disabled + label,
+span:not(#foo) > input[type=radio]:focus:disabled + label,
+span:not(#foo) > input[type=radio]:disabled + label:hover,
+span:not(#foo) > input[type=radio]:disabled + label:hover:active				{ background-position: 0 -216px; }
+span:not(#foo) > input[type=checkbox]:disabled:checked + label,
+span:not(#foo) > input[type=checkbox]:hover:disabled:checked + label,
+span:not(#foo) > input[type=checkbox]:focus:disabled:checked + label,
+span:not(#foo) > input[type=checkbox]:disabled:checked + label:hover,
+span:not(#foo) > input[type=checkbox]:disabled:checked + label:hover:active	{ background-position: 0 -106px; }
+span:not(#foo) > input[type=radio]:disabled:checked + label,
+span:not(#foo) > input[type=radio]:hover:disabled:checked + label,
+span:not(#foo) > input[type=radio]:focus:disabled:checked + label,
+span:not(#foo) > input[type=radio]:disabled:checked + label:hover,
+span:not(#foo) > input[type=radio]:disabled:checked + label:hover:active		{ background-position: 0 -226px; }
+

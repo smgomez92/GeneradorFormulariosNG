@@ -1,0 +1,484 @@
+@CHARSET "UTF-8";
+
+/********************************************
+ * CSS generales de los formularios. Cambios
+ * específicos deben ser hechos en
+ * entorno-cliente.css
+ ********************************************/
+.web-page .error {
+    outline: 2px solid red;
+}
+
+/********************************************
+ * LISTA VALORES
+ ********************************************/
+.list-of-values-lista {
+    position: absolute;
+    z-index: 511;
+    border: 1px outset #666;
+    background: #ffd;
+}
+
+.list-of-values-anterior,.list-of-values-siguiente {
+    padding: 2px;
+    background: #bcd;
+    text-align: center;
+    cursor: pointer;
+    font-size: x-small;
+}
+
+.list-of-values-tabla {
+    border-collapse: collapse;
+}
+
+.list-of-values-tabla thead {
+    background: #ccc;
+}
+
+.list-of-values-tabla thead td {
+    font-size: 9px;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.list-of-values-tabla tbody td {
+    border: 0;
+    cursor: pointer;
+    padding: 2px 4px;
+}
+
+.list-of-values-tr-selected {
+    background: #cff;
+}
+
+.list-of-values-tr-unselected {
+    background: #ffd;
+}
+
+.list-of-values-tabla tbody tr:hover,.list-of-values-tabla tbody tr.seleccionado {
+    background: #cff;
+}
+
+.list-of-values-button {
+    background: transparent;
+    border: 0;
+}
+
+/**************************************************
+ * ESTILOS DE GRUPOS
+ **************************************************/
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+fieldset legend {
+    font-weight: bold;
+    color: var(colorSecundario);
+    border-bottom: 1px solid var(colorSecundario);
+    width: 100%;
+    text-transform:uppercase;
+}
+
+fieldset > div.fila {
+    padding: 5px 10px;
+}
+
+div.flotable {
+    float: left;
+}
+
+.field-label {
+    color: var(colorSecundario);
+    text-transform:capitalize;
+}
+
+.field-label-header {
+    color: var(colorSecundario);
+    text-transform:capitalize;
+    text-align:center;
+    padding: 5px;
+}
+
+/**************************************************
+ * ESTILO GENERAL DE CAMPOS
+ **************************************************/
+input,select,textarea {
+    background-color: #f5f5f5;
+    border: 1px solid #999;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    color: #000;
+    height: 16px;
+    vertical-align: middle;
+}
+
+select {
+    height: 16px;
+}
+
+input[type=file] {
+    height: auto;
+}
+
+td > input[type=checkbox],td > input[type=radio] {
+    margin: 0;
+    height: auto;
+}
+
+button {
+    border: 1px outset;
+    border-radius: 5px;
+}
+
+iframe.remote-i-frame {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 1000px;
+    height: 400px;
+}
+
+/**************************************************
+ * ESTILOS DE FILAS
+ **************************************************/
+div.clonada div {
+    position: absolute;
+    white-space: nowrap;
+}
+
+div.clonada.horizontal {
+    float: left;
+}
+
+div.normal > div {
+    position: relative;
+}
+
+table.criteria-group, table.column-group, table.table-group {
+    margin: 0 auto 10px;
+}
+
+.table-group thead td.label {
+    color: white;
+    font-weight: bold;
+    padding: 3px 5px;
+    background-color: var(colorPrimario);
+}
+
+.table-group thead .label.empty {
+    background-color: transparent;
+    padding: 0;
+}
+
+.table-group tfoot .label {
+    text-align: right;
+    padding: 0 0 0 5px;
+}
+
+div.popup {
+}
+
+.columnas td {
+    white-space: nowrap;
+    vertical-align: middle;
+    padding-right: 2px;
+    overflow: visible;
+}
+
+.columnas input,.columnas select,.columnas textarea,.columnas button {
+    margin-left: 5px !important;
+    vertical-align: middle;
+}
+
+.columnas td + td .field-label {
+    margin-left: 20px;
+}
+
+.columns-with-separator > tbody > tr > td {
+    vertical-align: top;
+}
+
+tr.delete-record {
+    opacity: 0.75;
+}
+
+.criterios {
+    margin: 0 auto 10px;
+}
+
+/**************************************************
+ * ESTILOS DE TABLAS POR TIPO
+ **************************************************/
+td.delete-record, td.check-box, td.radio-button {
+    text-align: center;
+}
+
+td.delete-record .delete-record, td.check-box .check-box, td.radio-button .radio-button {
+    margin: 0 auto;
+}
+
+/**************************************************
+ * ESTILOS DE CAMPOS POR TIPO ORIGEN
+ **************************************************/
+.criterium {
+}
+
+.criterium:focus {
+}
+
+.criterium[readonly] {
+}
+
+.criterium[readonly]:focus {
+}
+
+.order {
+}
+
+.order:hover,.order:focus {
+}
+
+.record {
+}
+
+.record:focus {
+}
+
+.record[readonly]:focus {
+}
+
+.control {
+}
+
+.control:focus {
+}
+
+.control[readonly]:focus {
+}
+
+.description {
+}
+
+.description:focus {
+}
+
+/**************************************************
+ * ESTILOS DE CAMPOS POR ESTADO
+ **************************************************/
+.requerido {
+}
+
+input[readonly], select[disabled], textarea[readonly] {
+    background-color: #f5f5f5;
+    border: 1px solid #999;
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+}
+
+/**************************************************
+ * ESTILOS DE CAMPOS POR FORMATEADOR
+ **************************************************/
+.formatter {
+}
+
+.date-formatter {
+}
+
+.text-formatter {
+}
+
+.upper-case-formatter {
+    text-transform: uppercase;
+}
+
+.number-formatter {
+    text-align: right;
+}
+
+/**************************************************
+ * ESTILOS DE CAMPOS POR COMPORTAMIENTO
+ **************************************************/
+.email-validator {
+}
+
+.formula-disabler {
+}
+
+.formula-validator {
+}
+
+.html-popup {
+}
+
+.image-popup {
+}
+
+input.link, span.link, a.link, input.return-link, span.return-link, a.return-link {
+    color: var(colorPrimario);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.popup {
+}
+
+.report {
+}
+
+.return-link {
+}
+
+/**************************************************
+ * ESTILOS DE CAMPOS POR ASISTENTE
+ **************************************************/
+.file {
+}
+
+.password {
+}
+
+.calendar {
+}
+
+.calendar-format {
+    position: absolute;
+    display: none;
+    border: 1px solid black;
+    border-top-width: 0;
+    background: #333;
+    color: #ccc;
+    padding: 3px;
+    border-radius: 0 0 5px 5px;
+    cursor: default;
+    z-index: 510;
+}
+
+.calendar:focus + .calendar-format, .date-formatter:focus + .calendar-format {
+    display: block;
+}
+
+.long-text {
+}
+
+.list-of-values {
+}
+
+td.order {
+    width: 0;
+}
+
+.order+img {
+    padding-top: 2px;
+}
+
+/********************************************
+ * ESTILOS DE ICONOS ASISTENTES
+ ********************************************/
+input.usaIcono, textarea.usaIcono {
+    padding-right: 16px;
+}
+
+img.asistente-icono {
+    vertical-align: middle;
+    margin-left: -16px;
+    cursor: pointer;
+    position: relative;
+}
+
+input[readOnly] + img.asistente-icono,
+input[readOnly] ~ .date-picker-control {
+    opacity: 0.25;
+    cursor: default;
+}
+
+/**************************************************
+ * ESTILOS DE LA TABLA
+ **************************************************/
+.tabla {
+}
+
+.tabla thead {
+}
+
+.tabla thead tr {
+}
+
+.tabla thead td div {
+}
+
+.tabla tbody {
+}
+
+.tabla td,.tabla th {
+    overflow: visible;
+}
+
+.tabla th {
+}
+
+.tabla input,.tabla input:focus,.tabla input:active,.tabla select,.tabla select:focus,.tabla select:active,.tabla textarea,.tabla textarea:focus,.tabla textarea:active
+{
+}
+
+.tabla input[readonly] {
+}
+
+.tabla td.buscar {
+    background-color: transparent !important;
+}
+
+.tabla thead .label .buscar {
+    font-weight: bold;
+    padding: 10px 30px 10px 0;
+    color: var(colorSecundario);
+    background-color: transparent !important;
+}
+
+th.th-scroll {
+    width: 20px;
+}
+
+/**************************************************
+ * ESTILOS DE IMAGENES Y BARRA DE IMAGENES
+ **************************************************/
+.image {
+    vertical-align: middle;
+    background-color: #f6f6f6;
+}
+
+.image-controls {
+    background-color: #aaa;
+    padding: 5px;
+    position: absolute;
+    z-index: 510;
+    border-radius: 0 5px 5px;
+    margin-top: -3px;
+    display: none;
+}
+
+img:hover + .image-controls {
+    opacity: 0.5;
+    display: block;
+}
+
+.image-controls:hover {
+    opacity: 1;
+    display: block;
+}
+
+.image-popup-buttons {
+    padding: 5px;
+    text-align: center;
+}
+
+.image-popup-buttons button, .image-controls button {
+    margin: 0 5px;
+}
+
+.check-box{
+	margin-left:10px;
+}

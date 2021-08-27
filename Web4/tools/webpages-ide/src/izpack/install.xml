@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes" ?>
+<installation version="1.0">
+  <info>
+    <appname>@{project.name}</appname>
+    <appversion>@{project.version}</appversion>
+    <url>http://www.bantecinc.com/</url>
+  </info>
+  <guiprefs width="640" height="480" resizable="no" />
+  <locale>
+    <langpack iso3="spa" />
+  </locale>
+  <resources>
+    <res id="LicencePanel.licence" src="../../COPYING" />
+    <res id="InfoPanel.info" src="../../README" />
+  </resources>
+  <panels>
+    <panel classname="InfoPanel" />
+    <panel classname="LicencePanel" />
+    <panel classname="TargetPanel" />
+    <panel classname="InstallPanel" />
+    <panel classname="FinishPanel" />
+  </panels>
+  <packs>
+    <pack name="Librerias" required="yes">
+      <description>Librerias</description>
+      <file src="lib" targetdir="$INSTALL_PATH" />
+      <file src="../@{project.build.finalName}.@{project.packaging}" targetdir="$INSTALL_PATH" />
+    </pack>
+  </packs>
+</installation>

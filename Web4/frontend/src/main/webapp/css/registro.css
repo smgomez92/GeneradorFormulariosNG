@@ -1,0 +1,148 @@
+@CHARSET "UTF-8";
+
+/********************************************
+ * CSS de la página de registro.
+ ********************************************/
+* {
+    font-family: Arial, Helvetica, FreeSans, "Liberation Sans",
+        "Nimbus Sans L", sans-serif;
+}
+
+html {
+    background-color: #eee;
+    padding: 25px 25px;
+}
+
+body {
+    display: block;
+    margin: 0 auto;
+    padding: 75px 30px 30px 30px;
+    border: 1px solid #ddd;
+    background: url(../img/logo.png) no-repeat white center 25px;
+    border-radius: 10px;
+}
+
+h1 {
+    display: block;
+    border-bottom: 1px solid #ccc;
+    font-size: large;
+}
+
+p.error {
+    color: #a33;
+}
+
+a.enlace {
+    font-size: x-small;
+    float: right;
+    margin-top: 15px;
+}
+
+input[type=text] {
+    border: 1px solid #ccc;
+    margin: 0;
+}
+
+fieldset {
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+fieldset legend {
+    background-color: #999;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 2px 4px;
+    color: white;
+    font-weight: bold;
+    font-size: small;
+}
+
+fieldset * {
+    vertical-align: middle;
+    font-size: small;
+}
+
+fieldset input {
+    margin: 0;
+}
+
+fieldset > label {
+    width: 150px;
+    float: left;
+    height: 1.5em;
+}
+
+fieldset > div {
+    height: 1.5em;
+    display: block;
+}
+
+fieldset.change {
+    background: url(../img/progreso.gif) center no-repeat;
+    opacity: 0.33;
+}
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead {
+    background: #eee;
+    cursor: default;
+}
+
+th,td {
+    font-size: small;
+    padding: 2px 0 2px 2px;
+}
+
+tbody tr {
+    border-style: solid;
+    border-width: 1px 0;
+    border-color: #ccc;
+}
+
+tbody td {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 4px 0 4px 2px;
+}
+
+tbody tr:hover {
+    background: #def;
+}
+
+td.ninguno {
+    color: #aaa;
+}
+
+td.inicializado {
+    color: #3a3;
+}
+
+td.enviado {
+    color: #aa3;
+}
+
+td.recibido {
+    color: #33a;
+}
+
+td.completado {
+    color: #000;
+}
+
+td.error {
+    color: #a33;
+}
+
+#resultado {
+    display: none;
+    width: 100%;
+    height: 250px;
+}

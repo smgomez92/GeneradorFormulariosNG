@@ -1,0 +1,148 @@
+
+@import "variables.css";
+@import "proc/variables.css";
+
+/********************************************
+@CHARSET "UTF-8";
+ * CSS generales del las páginas de mensajes.
+ ********************************************/
+* {
+    font-family: Arial, Helvetica, FreeSans, "Liberation Sans",
+        "Nimbus Sans L", sans-serif;
+}
+
+html {
+    background-color: #eee;
+    padding: 50px;
+}
+
+body {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+    padding: 75px 30px 30px 30px;
+    border: 1px solid #ddd;
+    background: no-repeat white center 25px;
+    background-image: var(logo);
+    border-radius: 10px;
+}
+
+h1 {
+    display: block;
+    border-bottom: 1px solid #ccc;
+    font-size: large;
+}
+
+p {
+    font-size: medium;
+}
+
+pre {
+    font-family: monospace;
+    height: 250px;
+    background: #ddd;
+    overflow: auto;
+    border: 1px solid #aaa;
+}
+
+a.enlace {
+    font-size: x-small;
+    float: right;
+    margin-top: 15px;
+}
+
+button {
+    margin-right: 5px;
+}
+
+.ingreso-progreso {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/********************************************
+ * FORMULARIO
+ ********************************************/
+form {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+form input[type=text],form input[type=password] {
+    margin-left: 20px;
+    width: 150px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+form input[type=submit] {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+form label {
+    margin-left: 20px;
+    font-size: small;
+    font-weight: bold;
+    color: #666;
+}
+
+#keypad {
+    margin: 0 5px 5px 20px;
+    width: 75px;
+    padding: 5px;
+    background: #eee;
+    border-radius: 5px;
+    background: #eee;
+    display: none;
+}
+
+#keypad .boton {
+    cursor: pointer;
+    display: inline-table;
+    width: 10px;
+    height: 10px;
+    padding: 5px;
+    margin: 2.5px;
+    background: #ddd;
+    color: #aaa;
+    font-size: x-small;
+    text-align: center;
+    border-radius: 2px;
+}
+
+#instrucciones {
+	float: right;
+	width: 275px;
+}
+
+#instrucciones * {
+	font-size: x-small;
+}
+
+.wrap_opciones {
+    float: right;
+    text-align: right;
+    margin-top: -25px;
+}
+
+#mas_opciones {
+    font-size: xx-small;
+    margin: 5px;
+    color: #999;
+}
+
+#opciones {
+    background: #eee;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+#opciones > label {
+    font-weight: normal !important;
+    padding: 0;
+    margin: 0;
+    color: #000;
+}
