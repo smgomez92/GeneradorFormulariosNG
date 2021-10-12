@@ -11,4 +11,5 @@ import java.io.Serializable;
  */
 public interface SerializableHtml extends Serializable {
     void generateHtml(ConstructorHtml html);
+    void generateHtmlNg(ConstructorHtml html);
 }

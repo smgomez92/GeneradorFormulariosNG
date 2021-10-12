@@ -21,8 +21,9 @@ public abstract class Serializador<T> {
      *             En caso de error de entrada/salida
      */
     public abstract void serializar(T s, OutputStream os) throws IOException;
+    public abstract void serializarNg(T s, OutputStream os) throws IOException;
 
-    public String serializar(T s) {
+    public String serializar(T s) {        
         ByteArrayOutputStream os = new ByteArrayOutputStream();
 
         try {
@@ -34,5 +35,19 @@ public abstract class Serializador<T> {
             throw new Error(e);
         }
     }
+    
+    public String serializarNg(T s) {        
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        try {
+            this.serializarNg(s, os);
+
+            return os.toString("UTF-8");
+        } catch (IOException e) {
+            // No debería ocurrir
+            throw new Error(e);
+        }
+    }
+    
+    
 
 }

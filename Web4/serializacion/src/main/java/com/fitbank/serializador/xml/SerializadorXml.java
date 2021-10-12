@@ -14,9 +14,12 @@ import org.w3c.dom.Node;
 import com.sun.org.apache.xml.internal.serialize.Method;
 
 import com.fitbank.serializador.Serializador;
+import org.w3c.dom.ls.DOMImplementationLS;
+import org.w3c.dom.ls.LSOutput;
+import org.w3c.dom.ls.LSSerializer;
 
 /**
- * 
+ *
  * @author FitBank
  * @version 2.0
  */
@@ -26,6 +29,7 @@ public class SerializadorXml extends Serializador<SerializableXml<?>> {
     public void serializar(SerializableXml<?> s, OutputStream os)
             throws IOException {
         serializar(s, os, false);
+
     }
 
     public void serializar(SerializableXml<?> s, OutputStream os, boolean html)
@@ -49,6 +53,19 @@ public class SerializadorXml extends Serializador<SerializableXml<?>> {
         ser.serialize(d);
     }
 
+    public void serializarNg(SerializableXml<?> s, OutputStream os, boolean html)
+            throws IOException {
+        Document d = new DocumentImpl();
+        Node root = serialize(s, d);
+        d.appendChild(root);
+        DOMImplementationLS domImplLS = (DOMImplementationLS) d.getImplementation();
+        LSSerializer serializer = domImplLS.createLSSerializer();
+        LSOutput lso = domImplLS.createLSOutput();
+        lso.setByteStream(os);
+        serializer.write(d, lso);
+
+    }
+
     private Node serialize(SerializableXml<?> s, Document d) {
         Node node = s.getNode(d);
 
@@ -59,6 +76,11 @@ public class SerializadorXml extends Serializador<SerializableXml<?>> {
         }
 
         return node;
+    }
+
+    @Override
+    public void serializarNg(SerializableXml<?> s, OutputStream os) throws IOException {
+        serializarNg(s, os, false);
     }
 
 }
