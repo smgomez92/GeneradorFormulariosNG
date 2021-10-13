@@ -12,8 +12,7 @@ package com.fitbank.enums;
 public enum FormTypes {
 
     IDFORM("id", "idForm()", "pattern-required", "idiomas.CedulaInv-idiomas.msjIdRequerido"), COMBOFORM("combo", "comboForm()", "pattern", "idiomas.ValidarCampo"), FECHAFORM("fecha", "fechaForm()", "pattern", "idiomas.ValidarCampo"), TEXTFORM("texto", "textForm()", "pattern-required", "idiomas.msjSoloTexto-idiomas.ValidarCampo"),
-    NUMEROFORM("numero", "numberForm()", "pattern-required", "idiomas.msjSoloNumeros-idiomas.ValidarCampo"), ALFANUMERICOFORM("textoynumero", "textNumberForm()", "required", "idiomas.ValidarCampo");
-
+    NUMEROFORM("numero", "numberForm()", "pattern-required", "idiomas.msjSoloNumeros-idiomas.ValidarCampo"), ALFANUMERICOFORM("textoynumero", "textNumberForm()", "required", "idiomas.ValidarCampo"), NONE("", "noRequired()", "", "");
     private String nombre;
     private String metodo;
     private String tipos;

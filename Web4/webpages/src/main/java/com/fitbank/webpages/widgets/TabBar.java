@@ -14,9 +14,10 @@ import com.fitbank.propiedades.PropiedadEnum;
 import com.fitbank.propiedades.PropiedadListaString;
 import com.fitbank.serializador.html.ConstructorHtml;
 import com.fitbank.util.Servicios;
+import com.fitbank.webpages.Container;
 
 /**
- * 
+ *
  * @author FitBank
  * @version 2.0
  */
@@ -49,7 +50,6 @@ public class TabBar extends Label {
     // ////////////////////////////////////////////////////////
     // Geters y seters de properties
     // ////////////////////////////////////////////////////////
-
     public List<String> getTabLabels() {
         return ((PropiedadListaString<String>) properties.get("tex")).getList();
     }
@@ -78,7 +78,6 @@ public class TabBar extends Label {
     // ////////////////////////////////////////////////////////
     // Métodos de Edicion en el generador
     // ////////////////////////////////////////////////////////
-
     @Override
     public Collection<Propiedad<?>> getPropiedadesEdicion() {
         Collection<Propiedad<?>> l = super.getPropiedadesEdicion();
@@ -91,7 +90,6 @@ public class TabBar extends Label {
     // ////////////////////////////////////////////////////////
     // Métodos de Xml
     // ////////////////////////////////////////////////////////
-
     @Override
     protected Collection<String> getAtributosElementos() {
         Collection<String> l = super.getAtributosElementos();
@@ -104,9 +102,12 @@ public class TabBar extends Label {
     // ////////////////////////////////////////////////////////
     // Métodos de XHtml
     // ////////////////////////////////////////////////////////
-
     @Override
     public void generateHtml(ConstructorHtml html) {
+        /* for (Container container : this) {//obtener los contenedoresde alguna mandera.
+//validar con un tipo TAB 
+            container.generateHtmlNg(html);
+        }*/
         if (getTabLabels().isEmpty()) {
             return;
         }
@@ -148,21 +149,24 @@ public class TabBar extends Label {
 
         finalizarHtmlBase(html);
     }
+    
+
+    public void generarHtmlNg(ConstructorHtml html) {
+       /**
+        * 
+        */
+    }
 
     /**
      * Obtiene una lista de clases css para un tab. Por ejemplo si se pasa como
      * parametros "ABC" y "2-2-0-1", devuelve:
      *
-     * ABC-2-2
-     * ABC-2-2-0
-     * ABC-2-2-0-1
+     * ABC-2-2 ABC-2-2-0 ABC-2-2-0-1
      *
      * Debido a que este tab se muestra cuando se muestra un padre si el tab
      * termina en 0 o 1. Tambien a la lista se agrega:
      *
-     * ABC-child-2
-     * ABC-child-2-2
-     * ABC-child-2-2-0
+     * ABC-child-2 ABC-child-2-2 ABC-child-2-2-0
      *
      * Por que el tab es hijo de todos esos tabs.
      *

@@ -469,11 +469,11 @@ public class WebPage extends WebElement<Container> {
         WebPageEnviroment.reset(false);
         WebPageEnviroment.setFirstFocus(getFirstFocus());
 
-        html.abrir("form");
+        html.abrir("div");
         //html.setAtributo("enctype", "multipart/form-data");
         //html.setAtributo("method", "post");
         //html.setAtributo("autocomplete", "off");
-        html.setAtributo("class", "example-form", "");
+        html.setAtributo("class", "container", "");
         //html.extenderAtributo("onsubmit", "return false;");
         //html.setEstilo("margin-left", getX(), "px", 0);
         //html.setEstilo("margin-top", getY(), "px", 0);
@@ -494,6 +494,7 @@ public class WebPage extends WebElement<Container> {
         WebPageEnviromentNG.addFunctions(getInitialJS());
 
         for (Container container : this) {
+//validar con un tipo TAB se genera para ese 
             container.generateHtmlNg(html);
         }
         if (getNgOninit()) {
@@ -506,7 +507,7 @@ public class WebPage extends WebElement<Container> {
             WebPageEnviromentNG.addCustomExports(getExports());
         }
         WebPageEnviromentNG.addVariablesWithValue("intento", "true");
-        html.cerrar("form");
+        html.cerrar("div");
     }
 
 }

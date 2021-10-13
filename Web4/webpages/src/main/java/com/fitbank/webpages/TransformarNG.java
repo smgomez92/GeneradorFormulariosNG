@@ -31,7 +31,7 @@ public class TransformarNG {
         Debug.info(subsistema + trx);
         WebPageEnviromentNG.clear();
         WebPageEnviromentNG.addName(trx, subsistema);
-        
+
         String html = new SerializadorHtml().serializarNg(webPage);
         html = html.replaceAll("abreCorch--", "[");
         html = html.replaceAll("--cerrCorch--", "]");
@@ -64,13 +64,15 @@ public class TransformarNG {
      * @param form
      */
     public void createComponent(String pathNg, String form) {
+        String unidad;
         Process p;
         String systemInfo = getSoInfo().toLowerCase(), cmd;
         //un prefijo para el sistema operativo windows
         final String PRE_COMMAND = "cmd /c ";
         try {
+            unidad = pathNg.substring(0, 2);
             if (systemInfo.contains("windows")) {
-                cmd = PRE_COMMAND + "cd \"" + pathNg + "\" && ng g c " + form + " --module=app --entry-component=true";
+                cmd = PRE_COMMAND + unidad + " && cd \"" + pathNg + "\" && ng g c " + form + " --module=app --entry-component=true";
             } else {
                 cmd = "cd \"" + pathNg + "\" && ng g c " + form + " --module=app --entry-component=true";
             }

@@ -388,7 +388,7 @@ public class Input extends Widget implements FormElement {
         html.agregar("input");
         html.setAtributo("matInput", "true");
         html.setAtributo("readonly", "true");
-        html.setAtributo("abreCorch--ngModel--cerrCorch--", getNameOrDefault().concat(" | formatoFechaCalendar:idiomas.IdiomaSeleccionado"));
+        html.setAtributo("abreCorch--ngModel--cerrCorch--", getNameOrDefault()/*.concat(" | formatoFechaCalendar:idiomas.IdiomaSeleccionado")*/);
         WebPageEnviromentNG.addVariablesWithValue(getNameOrDefault(), getValueInicial().isEmpty() ? "new Date()" : getValueInicial());
         html.setAtributo("abreCorch--ngModelOptions--cerrCorch--", "{standalone: true}");
         html.setAtributo("abreCorch--disabled--cerrCorch--", "disableFechas_" + getName());

@@ -28,13 +28,14 @@ public class WebPageEnviromentNG {
     private static String inicialTS = "import { Component, Input, DoCheck, AfterViewInit, OnChanges, OnInit } from '@angular/core';\n"
             + "import { FormControl, FormGroupDirective, NgForm, Validators, Form } from '@angular/forms';\n"
             + "import { ErrorStateMatcher } from '@angular/material/core';\n"
-            + "import { internetComponent } from '../funciones/internet';\n"
-            + "import { ApiService } from '../api.service';\n"
-            + "import { Alerta } from '../funciones/alerta';\n"
+            + "// import { internetComponent } from '../funciones/internet';\n"
+            + "// import { ApiService } from '../api.service';\n"
+            + "// import { Alerta } from '../funciones/alerta';\n"
             + "import { Router } from '@angular/router';\n"
-            + "import { Servicios } from '../funciones/encryptar'\n"
-            + "import { BaseDatos } from '../funciones/basededatos';\n"
+            + "// import { Servicios } from '../funciones/encryptar'\n"
+            + "// import { BaseDatos } from '../funciones/basededatos';\n"
             + "import { FormControlValidators } from '../funciones/formcontrol';\n"
+            + "import { Idioma } from '../funciones/idioma';\n"
             + "\n"
             + "${imports}\n"
             + "\n"
@@ -48,27 +49,24 @@ public class WebPageEnviromentNG {
             + "\n"
             + "export class Form{$component$}Component ${implements} {\n"
             + "\n"
-            + "@Input() idiomas: any;\n"
-            + "@Input() grande: boolean;\n"
-            + "@Input() mediano: boolean;\n"
-            + "@Input() normal: boolean;\n"
+            + "// @Input() idiomas: any;\n"
+            + "// @Input() grande: boolean;\n"
+            + "// @Input() mediano: boolean;\n"
+            + "// @Input() normal: boolean;\n"
             + "${exports}"
             + "\n"
-            + "\n"
-            + "constructor(\n"
-            + "   private api: ApiService,\n"
-            + "   public alerta: Alerta,\n"
-            + "   private servicio: Servicios,\n"
-            + "   private router: Router,\n"
-            + "   private base: BaseDatos, public internet: internetComponent,  private validators: FormControlValidators) {{$ftc}\n{$lov}}\n";
+            + "\n"            
+            + "constructor( private idioma: Idioma, private validators: FormControlValidators) {{$ftc}\n{$lov}}\n"
+            + "idiomas = this.idioma.espanol;\n";
 
-    private static String finalTS = "logout() {\n"
-            + "   let obj = {\n"
-            + "     'salir': true\n"
-            + "   }\n"
-            + "   this.alerta.generarOfflineDialogo(obj, this.idiomas);\n"
-            + " }\n"
-            + "}";
+//    private static String finalTS = "logout() {\n"
+//            + "   let obj = {\n"
+//            + "     'salir': true\n"
+//            + "   }\n"
+//            + "   this.alerta.generarOfflineDialogo(obj, this.idiomas);\n"
+//            + " }\n"
+//            + "}";
+    private static String finalTS = "}";
     private static String showHideRows = "\n"
             + "showHideRows() {\n"
             + "    try {\n"
@@ -194,7 +192,7 @@ public class WebPageEnviromentNG {
     }
 
     public static void addCustomImports(String imports) {
-        customImports = customImports.concat("//Imports Personalizados\n");
+        customImports = customImports.concat("// Imports Personalizados\n");
         String imps[] = imports.split(";");
         for (String imp : imps) {
             customImports += imp.concat(";");
@@ -203,7 +201,7 @@ public class WebPageEnviromentNG {
     }
 
     public static void addCustomExports(String imports) {
-        customExports = customExports.concat("//Exports Personalizados\n");
+        customExports = customExports.concat("// Exports Personalizados\n");
         String imps[] = imports.split(";");
         for (String imp : imps) {
             customExports += imp.concat(";");
